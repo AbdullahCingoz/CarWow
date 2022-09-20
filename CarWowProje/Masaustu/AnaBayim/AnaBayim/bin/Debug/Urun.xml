@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ürün>
+  <urun id="">3e0d67ab-6fa0-479a-a72d-215ee0ea5748<name></name><category>1</category><brand>1</brand><description></description><stock></stock><price></price><status>false</status><coverımage></coverımage></urun>
+  <urun id="">bfec7ad1-107a-4138-b5f0-443950003c1d<name>deneme</name><category>1</category><brand>1</brand><description>deneme111</description><stock>12</stock><price>1</price><status>true</status><coverımage></coverımage></urun>
+  <urun id="">5fd6170f-2312-4689-91c6-154b6238b779<name>denemeeea</name><category>1</category><brand>1</brand><description>dssadasd</description><stock>12</stock><price>21</price><status>true</status><coverımage></coverımage></urun>
+</ürün>

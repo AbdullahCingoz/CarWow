@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "45eff993-4cf2-46e1-a3ac-4032d5073fcb": {
+      "ProjectGuid": "45eff993-4cf2-46e1-a3ac-4032d5073fcb",
+      "DisplayName": "ApoBank",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

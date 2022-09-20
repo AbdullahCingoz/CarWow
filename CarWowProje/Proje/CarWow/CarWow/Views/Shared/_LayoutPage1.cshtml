@@ -1,0 +1,54 @@
+﻿@using CarWow.Models
+
+<!DOCTYPE html>
+@{
+    CarWowDb db = new CarWowDb();
+    List<UserCart> cartList = new List<UserCart>();
+    if (Session["user"] != null)
+    {
+        User u = Session["user"] as User;
+        int id = u.ID;
+        cartList = db.UserCarts.Where(x => x.User_ID == id).ToList();
+    }
+
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="@Url.Action("Index","Home")" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="~/Images/CarWow.jpg" class="" style="width:100px" />
+                <span class="fs-4">CarWow</span>
+            </a>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="@Url.Action("Index","Home")" class="nav-link px-2 link-secondary">Anasayfa</a></li>
+                <li><a href="@Url.Action("Index","MyCategories")" class="nav-link px-2 link-dark">Kategoriler</a></li>
+                <li><a href="@Url.Action("Index","Home")" class="nav-link px-2 link-dark">İletişim</a></li>
+            </ul>
+            @if (Session["user"] == null)
+            {
+        <div class="col-md-3 text-end">
+            <a href="@Url.Action("Login","User")" type="button" class="btn btn-outline-primary me-2">Giriş Yap</a>
+            <a href="@Url.Action("SingUp","User")" type="button" class=" btn btn-outline-primary me-2">Üye Ol</a>
+        </div>
+            }
+            else
+            {
+                <div class="col-md-3 text-end">
+                    <a href="@Url.Action("Index","UserCart")" type="button" class="btn btn-outline-primary me-2">Sepetim (@cartList.Count) </a>
+                    <a href="@Url.Action("LogOut","User")" type="button" class="btn btn-primary">Çıkış Yap</a>
+                </div>
+            }
+        </header>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
